@@ -1,5 +1,6 @@
 import About from "./components/About"
 import Nav from "./components/Nav"
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -9,9 +10,10 @@ function App() {
         
             
             <About></About>
-        
+            <Footer />
       </main>
     </div>
+    
   );
 }
 

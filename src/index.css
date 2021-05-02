@@ -110,7 +110,7 @@ h6 {
   color: #241c19;
   padding: 5px;
   border-radius: 10px;
-  border: 3px solid #241c19;
+  border: 3px solid var(--secondary);
 }
 
 .portfolio-image {
@@ -194,10 +194,6 @@ nav a:hover {
   text-decoration: none;
 }
 
-nav  li {
- 
-}
-
 textarea {
 	width: 600px;
 	height: 120px;
@@ -205,11 +201,45 @@ textarea {
 	padding: 5px;
 }
 
+.copyright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 200px;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .container {
   width: 85%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.github-logo {
+  width: 70px;
+  height: 70px;
+  background-color: var(--secondary);
+  border-radius: 50px;
+  border: 2px solid var(--secondary);
+}
+
+.linkedin-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+}
+
+.stack-logo {
+  width: 70px;
+  height: 70px;
 }
 
 .flex-row {
@@ -324,7 +354,6 @@ button {
   color: var(--secondary);
 }
 
-
 @media only screen and (max-width: 935px) {
 header {
   justify-content: center;
@@ -356,7 +385,15 @@ header {
   .about-title {
     margin-left: 0;
   }
-  
+
+  .descDiv {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  /* .copyright {
+    flex-direction: column;
+  }  */
 }
 
 @media only screen and (max-width: 400px) {
