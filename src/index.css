@@ -47,13 +47,6 @@ h6 {
   line-height: 1.25;
 }
 
-h1 {
-  font-size: 2.25rem;
-  color: var(--secondary);
-  margin-left: 5rem;
-  margin-top: 10rem;
-}
-
 h2 {
   font-size: 2rem;
 }
@@ -74,25 +67,50 @@ h6 {
   font-size: 1rem;
 }
 
-p {
+.description {
   font-size: 1.1rem;
-  color: var(--secondary);
+  color: #241c19;
   font-weight: bold;
   text-align: justify;
-  padding-left: 5rem;
-  padding-right: 10rem;
-  margin-top: 5rem;
-
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1px;
 }
 
-a {
-  color: var(--tertiary);
+.descDiv {
+  background-color: var(--secondary);
+  margin-left: 5rem;
+  margin-right: 5rem;
+  padding-top: 1rem;
+  margin-top: 5rem;
+  padding-bottom: 0.2rem;
+  border-radius: 50px;
+}
+
+.about-title {
+  font-size: 2.25rem;
+  color: var(--secondary);
+  margin-left: 5rem;
+}
+
+.about,
+.portfolio,
+.contact,
+.resume {
+  color: var(--secondary);
   text-decoration: none;
   font-weight: bold;
 }
 
-a:hover {
-  text-decoration: underline;
+.about:hover,
+.portfolio:hover,
+.contact:hover,
+.resume:hover {
+  background-color: var(--secondary);
+  color: #241c19;
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid #241c19;
 }
 
 .portfolio-image {
@@ -102,11 +120,23 @@ a:hover {
   width: 20vh;
   height: 20vh;
   margin-left: 5rem;
-  
 }
 
-header a {
-  color: var(--light);
+.portfolio-title {
+  color: #241c19;
+  background-color: var(--secondary);
+  padding: 5px;
+  text-align: center;
+  box-shadow: 2px 2px 8px #FF0000;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+header {
+  justify-content: space-between;
+  margin-right: 15px;
 }
 
 button {
@@ -165,7 +195,7 @@ nav a:hover {
 }
 
 nav  li {
-  cursor: pointer;
+ 
 }
 
 textarea {
@@ -290,18 +320,15 @@ button {
 	padding: 10px 15px;	
 }
 
-a {
-	border-radius: 5px;
-	color: var(--primary);
-	font-weight: 600;
-	padding: 2px 4px;
-	margin-left: -2px;
-	margin-right: -2px;
-	
-}
-
 .navActive {
   color: var(--secondary);
+}
+
+
+@media only screen and (max-width: 935px) {
+header {
+  justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 875px) {
@@ -318,6 +345,26 @@ a {
   p {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .portfolio-title {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-title {
+    margin-left: 0;
+  }
+  
+}
+
+@media only screen and (max-width: 400px) {
+  .portfolio-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
   }
 }
 

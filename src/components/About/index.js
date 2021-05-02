@@ -4,10 +4,10 @@ function About() {
 
   return (
     <section className="my-5" >
-      <h1 id="about">About Me</h1>
-      <img src={portImage} className="portfolio-image" alt="Davit's portfolio picture" />
-      <div className="">
-        <p>
+      <h1 id="about" className="about-title">About Me</h1>
+      <img src={portImage} className="portfolio-image" alt="Davit's portfolio" />
+      <div className="descDiv">
+        <p className="description">
         &emsp;Full Stack Developer with a passion for web application development 
         and success in managing development projects. Skilled in conceptualizing, 
         designing, developing, and deploying software containing logical and 
