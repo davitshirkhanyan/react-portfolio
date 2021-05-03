@@ -5,7 +5,7 @@ function Nav(props) {
     return (
       <header className="flex-row">
         <h2>
-          <a data-testid="link" className="portfolio-title" href="/">
+          <a data-testid="link" className="portfolio-title" href="http://davitshirkhanyan.github.io/react-portfolio">
             Davit Shirkhanyan
           </a>
         </h2>

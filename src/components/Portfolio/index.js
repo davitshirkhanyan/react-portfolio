@@ -16,7 +16,7 @@ function Portfolio() {
 		},
 		{
 			name: 'The BasketBlog',
-			image: 'project2',
+			image: 'project2.png',
 			technologies: [
 				'HTML/CSS',
 				'JavaScript',
@@ -30,14 +30,14 @@ function Portfolio() {
 		},
 		{
 			name: 'Password Generator',
-			image: 'password',
+			image: 'password.png',
 			technologies: ['HTML/CSS', 'JavaScript'],
 			github: 'https://github.com/davitshirkhanyan/password-generator',
 			deployed: 'https://davitshirkhanyan.github.io/password-generator/',
 		},
 		{
 			name: 'Weather Dashboard',
-			image: 'weather-dashboard',
+			image: 'weather-dashboard.png',
 			technologies: [
                 'HTML/CSS',
 				'JavaScript',
@@ -51,14 +51,14 @@ function Portfolio() {
 		},
 		{
 			name: 'Git It Done',
-			image: 'git-it-done',
+			image: 'git-it-done.png',
 			technologies: ['HTML/CSS', 'JavaScript'],
 			github: 'https://github.com/davitshirkhanyan/git-it-done',
 			deployed: 'https://davitshirkhanyan.github.io/git-it-done/',
 		},
 		{
 			name: 'Run Buddy',
-			image: 'run-body',
+			image: 'run-body.png',
 			technologies: ['HTML/CSS'],
 			github: 'https://github.com/davitshirkhanyan/run-buddy',
 			deployed: 'https://davitshirkhanyan.github.io/run-buddy/',
@@ -72,22 +72,22 @@ function Portfolio() {
 			</div>
 			<div>
 				<ul className="flex-row portfolio-list">
-					<li>
-						<Project projects={projects[0]}></Project>
+					<li className="project-list">
+						<Project projects={projects[0]}></Project>  
 					</li>
-					<li>
+					<li className="project-list">
 						<Project projects={projects[1]}></Project>
 					</li>
-					<li>
+					<li className="project-list">
 						<Project projects={projects[2]}></Project>
 					</li>
-					<li>
+					<li className="project-list">
 						<Project projects={projects[3]}></Project>
 					</li>
-					<li>
+					<li className="project-list">
 						<Project projects={projects[4]}></Project>
 					</li>
-					<li>
+					<li className="project-list">
 						<Project projects={projects[5]}></Project>
 					</li>
 				</ul>

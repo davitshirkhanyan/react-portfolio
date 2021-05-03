@@ -1,5 +1,5 @@
 :root {
-  --primary: var(--primary);
+  --primary: #241c19;
   --secondary: #F3A847;
   --tertiary: #B12704;
   --light: #fafafa;
@@ -128,6 +128,11 @@ h6 {
 	justify-content: center;
 }
 
+.cardDiv {
+  display: flex;
+	justify-content: center;
+}
+
 .padding {
 	padding: 50px;
 }
@@ -163,19 +168,20 @@ h6 {
 
 .card-title {
 	font-size: 1.5rem;
-	color: var(--secondary);
+	color: var(--primary);
+  font-weight: bold;
 }
 
 .card-subtitle {
-	font-size: 1rem;
+	font-size: 1.2rem;
 	color: var(--tertiary);
   margin-top: 15px;
 }
 
 .card-techs {
-	font-size: 0.75rem;
+	font-size: 1rem;
 	height: 4rem;
-	color: var(--secondary);
+	color: var(--primary);
 }
 
 .card-image {
@@ -184,8 +190,10 @@ h6 {
 }
 
 .card-link {
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	font-size: 0.70rem;
+	font-size: 1rem;
+  color: var(--secondary);
+  outline: none;
+  text-decoration: none;
 }
 
 .portfolio-image {
@@ -223,7 +231,7 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 
 button:hover {
@@ -391,8 +399,19 @@ textarea {
 
 .portfolio-list {
   justify-content: center;
-  margin-right: auto;
-  margin-left: auto;
+  margin-top: 50px;
+}
+
+.project-list {
+background-color: var(--secondary);
+border-radius: 30px;
+margin: 10px;
+}
+
+.project-list1 {
+  background-image: url("./assets/images/password.PNG");
+  background-position: center;
+  background-size: cover;
 }
 
 .space-between {
@@ -487,7 +506,6 @@ textarea {
 }
 
 button {
-	color: var(--secondary);
 	border: 0;
 	border-radius: 10px;
 	color: var(--primary);

@@ -27,25 +27,26 @@ function Project(props) {
 	}
 
 	return (
+        
 		<Card id="main-card">
 			<Card.Img id="card-img"
 				variant="top"
-				src={`../../assets/images/${image}`}
+				src={(`../../assets/images/${image}`).default}
                 alt={image.name}
 				className="card-image"
 			/>
-			<div className="center">
+			<div className="cardDiv">
 				<Card.Body>
 					<Card.Title className="card-title">{name}</Card.Title>
 					<Card.Subtitle className="card-subtitle">Techs Used</Card.Subtitle>
 					<Card.Text className="card-techs">{getTechs(techs)}</Card.Text>
-					<Card.Link href={appLink} target="_blank" className="card-link">
+					<button><Card.Link href={appLink} target="_blank" className="card-link">
 						{name} App
-					</Card.Link>
+					</Card.Link></button>
 					<br></br>
-					<Card.Link href={gitLink} target="_blank" className="card-link">
+					<button><Card.Link href={gitLink} target="_blank" className="card-link">
 						{name} Github
-					</Card.Link>
+					</Card.Link></button>
 				</Card.Body>
 			</div>
 		</Card>
