@@ -31,7 +31,7 @@ function Project(props) {
 		<Card id="main-card">
 			<Card.Img id="card-img"
 				variant="top"
-				src={(`../../assets/images/${image}`).default}
+				src={require(`../../assets/images/${image}`).default}
                 alt={image.name}
 				className="card-image"
 			/>

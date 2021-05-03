@@ -30,14 +30,14 @@ function Portfolio() {
 		},
 		{
 			name: 'Password Generator',
-			image: 'password.png',
+			image: 'password.PNG',
 			technologies: ['HTML/CSS', 'JavaScript'],
 			github: 'https://github.com/davitshirkhanyan/password-generator',
 			deployed: 'https://davitshirkhanyan.github.io/password-generator/',
 		},
 		{
 			name: 'Weather Dashboard',
-			image: 'weather-dashboard.png',
+			image: 'weather-dashboard.PNG',
 			technologies: [
                 'HTML/CSS',
 				'JavaScript',
@@ -51,17 +51,18 @@ function Portfolio() {
 		},
 		{
 			name: 'Git It Done',
-			image: 'git-it-done.png',
+			image: 'git-it-done.PNG',
 			technologies: ['HTML/CSS', 'JavaScript'],
 			github: 'https://github.com/davitshirkhanyan/git-it-done',
 			deployed: 'https://davitshirkhanyan.github.io/git-it-done/',
 		},
 		{
-			name: 'Run Buddy',
-			image: 'run-body.png',
-			technologies: ['HTML/CSS'],
-			github: 'https://github.com/davitshirkhanyan/run-buddy',
-			deployed: 'https://davitshirkhanyan.github.io/run-buddy/',
+			name: 'Pizza Hunt',
+			image: 'pizza.PNG',
+			technologies: ['HTML/CSS', 'Javascript', 'Node.js',
+            'MongoDB', 'Mongoose', "IndexedDB"],
+			github: 'https://github.com/davitshirkhanyan/pizza-hunt',
+			deployed: 'https://pizza-heroku-hunt.herokuapp.com/',
 		},
 	];
 
@@ -70,28 +71,26 @@ function Portfolio() {
 			<div className="center">
 				<h1 className="page-header">My Portfolio</h1>
 			</div>
-			<div>
-				<ul className="flex-row portfolio-list">
-					<li className="project-list">
-						<Project projects={projects[0]}></Project>  
+				<ul className="flex-row portfolio-list"> 
+                    <li className="project-list">
+					<Project projects={projects[0]}></Project>  
+					</li> 
+                    <li className="project-list">
+					<Project projects={projects[1]}></Project>  
+					</li>  
+                    <li className="project-list">
+					<Project projects={projects[2]}></Project>  
 					</li>
-					<li className="project-list">
-						<Project projects={projects[1]}></Project>
-					</li>
-					<li className="project-list">
-						<Project projects={projects[2]}></Project>
-					</li>
-					<li className="project-list">
-						<Project projects={projects[3]}></Project>
-					</li>
-					<li className="project-list">
-						<Project projects={projects[4]}></Project>
-					</li>
-					<li className="project-list">
-						<Project projects={projects[5]}></Project>
+                    <li className="project-list">
+					<Project projects={projects[3]}></Project>  
+					</li> 
+                    <li className="project-list">
+					<Project projects={projects[4]}></Project>  
+					</li> 
+                    <li className="project-list">
+					<Project projects={projects[5]}></Project>  
 					</li>
 				</ul>
-			</div>
 		</section>
 	);
 }

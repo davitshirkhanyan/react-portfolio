@@ -185,8 +185,10 @@ h6 {
 }
 
 .card-image {
-	max-width: 300px;
-	max-height: 150px;
+	max-width: 400px;
+	max-height: 250px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .card-link {
@@ -405,13 +407,8 @@ textarea {
 .project-list {
 background-color: var(--secondary);
 border-radius: 30px;
-margin: 10px;
-}
-
-.project-list1 {
-  background-image: url("./assets/images/password.PNG");
-  background-position: center;
-  background-size: cover;
+margin: 5px;
+border: 8px solid var(--tertiary);
 }
 
 .space-between {
