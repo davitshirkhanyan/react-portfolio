@@ -5,7 +5,7 @@ function Resume() {
 		<section>
             <div>
 			<div className="resumeDiv">
-				<h1 className="resume-title">My Resume</h1>
+				<h1 className="resume-title" id="resume">My Resume</h1>
 			</div>
 			<div className="downloadDiv">
             <span className="resDownload">Download my </span><a href={resume} download className="resume"><span>Resume</span></a>
