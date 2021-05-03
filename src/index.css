@@ -93,10 +93,20 @@ h6 {
   margin-left: 5rem;
 }
 
+.downloadDiv {
+  text-align: center;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.resume {
+  color: var(--secondary);
+  font-weight: bold;
+}
+
 .about,
 .portfolio,
-.contact,
-.resume {
+.contact {
   color: var(--secondary);
   text-decoration: none;
   font-weight: bold;
@@ -166,6 +176,48 @@ img {
 
 span[role="img"] {
   cursor: default;
+}
+
+.resume-title {
+  color: var(--secondary);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.skillsDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.skills-1 {
+  background-color: var(--secondary);
+  border-radius: 50px;
+  text-align: left;
+  padding: 5px;
+  border: 5px solid var(--tertiary);
+  margin-bottom: 10px;
+}
+
+.skills-2 {
+  background-color: var(--secondary);
+  border-radius: 50px;
+  text-align: left;
+  padding-left: 2px;
+  list-style: circle;
+  padding-right: 60px;
+  border: 5px solid var(--tertiary);
+}
+
+.skills-1 li, .skills-2 li {
+  list-style: square;
+}
+
+.resumeDiv {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 form {
