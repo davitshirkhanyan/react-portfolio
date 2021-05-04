@@ -513,6 +513,11 @@ button {
 	padding: 10px 15px;	
 }
 
+.submit-btn {
+  color: var(--primary);
+  background-color: var(--secondary);
+}
+
 .navActive {
   color: var(--tertiary);
   font-weight: bold;
