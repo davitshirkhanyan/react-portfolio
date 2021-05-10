@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-portfolio/static/css/main.c6524d06.chunk.css",
-    "main.js": "/react-portfolio/static/js/main.83bffab1.chunk.js",
-    "main.js.map": "/react-portfolio/static/js/main.83bffab1.chunk.js.map",
+    "main.js": "/react-portfolio/static/js/main.a81470d4.chunk.js",
+    "main.js.map": "/react-portfolio/static/js/main.a81470d4.chunk.js.map",
     "runtime-main.js": "/react-portfolio/static/js/runtime-main.0c37f8f9.js",
     "runtime-main.js.map": "/react-portfolio/static/js/runtime-main.0c37f8f9.js.map",
     "static/js/2.c9fe3fb9.chunk.js": "/react-portfolio/static/js/2.c9fe3fb9.chunk.js",
@@ -15,7 +15,7 @@
     "static/media/davitshirkhanyan-resume.b02d21a4.pdf": "/react-portfolio/static/media/davitshirkhanyan-resume.b02d21a4.pdf",
     "static/media/davitshirkhanyan.jpg": "/react-portfolio/static/media/davitshirkhanyan.64484ae8.jpg",
     "static/media/deep-thoughts.PNG": "/react-portfolio/static/media/deep-thoughts.054640c0.PNG",
-    "static/media/password.PNG": "/react-portfolio/static/media/password.bbecddba.PNG",
+    "static/media/git-it-done.PNG": "/react-portfolio/static/media/git-it-done.31dc3c44.PNG",
     "static/media/pizza.PNG": "/react-portfolio/static/media/pizza.cecab859.PNG",
     "static/media/port-bg.jpg": "/react-portfolio/static/media/port-bg.c7acefd6.jpg",
     "static/media/project1.png": "/react-portfolio/static/media/project1.00f9252a.png",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.0c37f8f9.js",
     "static/js/2.c9fe3fb9.chunk.js",
     "static/css/main.c6524d06.chunk.css",
-    "static/js/main.83bffab1.chunk.js"
+    "static/js/main.a81470d4.chunk.js"
   ]
 }
