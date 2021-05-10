@@ -50,11 +50,11 @@ function Portfolio() {
 			deployed: 'https://davitshirkhanyan.github.io/weather-dashboard/',
 		},
 		{
-			name: 'Git It Done',
-			image: 'git-it-done.PNG',
-			technologies: ['HTML/CSS', 'JavaScript'],
-			github: 'https://github.com/davitshirkhanyan/git-it-done',
-			deployed: 'https://davitshirkhanyan.github.io/git-it-done/',
+			name: 'Deep Thoughts',
+			image: 'deep-thoughts.PNG',
+			technologies: ['MongoDB', 'React', 'Express.js', 'Node.js'],
+			github: 'https://github.com/davitshirkhanyan/deep-thoughts',
+			deployed: 'https://deep-heroku-thoughts.herokuapp.com/',
 		},
 		{
 			name: 'Pizza Hunt',
