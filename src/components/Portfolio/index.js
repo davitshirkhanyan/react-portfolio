@@ -29,11 +29,11 @@ function Portfolio() {
 			deployed: 'https://guarded-ravine-67476.herokuapp.com/',
 		},
 		{
-			name: 'Password Generator',
-			image: 'password.PNG',
+			name: 'Git It Done',
+			image: 'git-it-done.PNG',
 			technologies: ['HTML/CSS', 'JavaScript'],
-			github: 'https://github.com/davitshirkhanyan/password-generator',
-			deployed: 'https://davitshirkhanyan.github.io/password-generator/',
+			github: 'https://github.com/davitshirkhanyan/git-it-done',
+			deployed: 'https://davitshirkhanyan.github.io/git-it-done/',
 		},
 		{
 			name: 'Weather Dashboard',
