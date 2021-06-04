@@ -33,7 +33,7 @@ React.js
 
 ## Website
 
-https://davitshirkhanyan.github.io/react-portfolio/
+https://davitshirkhanyan.com/
 
 ![portfolio](https://user-images.githubusercontent.com/74809116/116844649-82a28600-ab98-11eb-8e0f-87c7b62098cb.PNG)
 
