@@ -38,6 +38,7 @@ function Resume() {
 					<li>Git</li>
 					<li>Jest</li>
 					<li>Webpack</li>
+					<li>Stripe</li>
 				</ol>
 				<h5>Database</h5>
 				<ol>
