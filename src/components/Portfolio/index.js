@@ -61,6 +61,13 @@ function Portfolio() {
 			github: 'https://github.com/davitshirkhanyan/pizza-hunt',
 			deployed: 'https://pizza-heroku-hunt.herokuapp.com/',
 		},
+		{
+			name: 'Shop-Shop',
+			image: 'shop-shop.PNG',
+			technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux', 'GraphQL', 'Apollo Server'],
+			github: 'https://github.com/davitshirkhanyan/redux-store',
+			deployed: 'https://redux-heroku-store.herokuapp.com/',
+		},
 	];
 
 	return (
@@ -86,6 +93,9 @@ function Portfolio() {
 					</li> 
                     <li className="project-list">
 					<Project projects={projects[5]}></Project>  
+					</li>
+					<li className="project-list">
+					<Project projects={projects[6]}></Project>  
 					</li>
 				</ul>
 		</section>
