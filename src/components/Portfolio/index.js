@@ -68,6 +68,13 @@ function Portfolio() {
 			github: 'https://github.com/davitshirkhanyan/redux-store',
 			deployed: 'https://redux-heroku-store.herokuapp.com/',
 		},
+		{
+			name: 'Weather Dashboard',
+			image: 'weather-dashboard.PNG',
+			technologies: ['HTML/CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'OpenWeather API'],
+			github: 'https://github.com/davitshirkhanyan/weather-dashboard',
+			deployed: 'https://davitshirkhanyan.github.io/weather-dashboard/',
+		},
 	];
 
 	return (
@@ -96,6 +103,9 @@ function Portfolio() {
 					</li>
 					<li className="project-list">
 					<Project projects={projects[6]}></Project>  
+					</li>
+					<li className="project-list">
+					<Project projects={projects[7]}></Project>
 					</li>
 				</ul>
 		</section>

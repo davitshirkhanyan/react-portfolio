@@ -1,48 +1,70 @@
 import React, { useState } from "react";
-import { validateEmail } from "../../utils/helpers";
+import { validateEmail, checkBlank } from "../../utils/helpers";
+
+const CONTACT_EMAIL = "davit.shirkhanyan@gmail.com";
+
+const LABELS = {
+	name: "Name",
+	email: "Email address",
+	message: "Message",
+};
+
+// Returns an error message for a field, or "" if it's valid.
+function validateField(field, value) {
+	if (checkBlank(value)) {
+		return `${LABELS[field]} is required.`;
+	}
+	if (field === "email" && !validateEmail(value)) {
+		return "Your email is invalid.";
+	}
+	return "";
+}
 
 function Contact() {
-	const [formState, setFormState] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
-
-	const [errorMessage, setErrorMessage] = useState("");
+	const [formState, setFormState] = useState({ name: "", email: "", message: "" });
+	const [errors, setErrors] = useState({});
+	const [sent, setSent] = useState(false);
 	const { name, email, message } = formState;
 
 	function handleChange(e) {
-		if (e.target.name === "email") {
-			const isValid = validateEmail(e.target.value);
-			if (!isValid) {
-				setErrorMessage("Your email is invalid.");
-			} else {
-				if (!e.target.value.length) {
-					setErrorMessage(`${e.target.name} is required.`);
-				} else {
-					setErrorMessage("");
-				}
-			}
-		}
-
-		if (!errorMessage) {
-			setFormState({ ...formState, [e.target.name]: e.target.value });
+		const { name: field, value } = e.target;
+		setFormState({ ...formState, [field]: value });
+		setSent(false);
+		// Clear a field's error as soon as it becomes valid while typing.
+		if (errors[field] && !validateField(field, value)) {
+			setErrors({ ...errors, [field]: "" });
 		}
 	}
 
-	function handleBlank(e) {
-		if (e.target.name === "Name" || e.target.name === "Message") {
-			if (!e.target.value.length) {
-				setErrorMessage(`${e.target.name} is required.`);
-			} else {
-				setErrorMessage("");
-			}
+	function handleBlur(e) {
+		const { name: field, value } = e.target;
+		setErrors({ ...errors, [field]: validateField(field, value) });
+	}
+
+	function handleSubmit(e) {
+		e.preventDefault();
+
+		const newErrors = {};
+		Object.keys(formState).forEach((field) => {
+			newErrors[field] = validateField(field, formState[field]);
+		});
+		setErrors(newErrors);
+		if (Object.values(newErrors).some(Boolean)) {
+			return;
 		}
 
-		if (!errorMessage) {
-			setFormState({ ...formState, [e.target.name]: e.target.value });
-		}
+		// The site is static (no server to send mail), so open the visitor's
+		// email app with the message filled in.
+		const subject = `Portfolio contact from ${name.trim()}`;
+		const body = `${message.trim()}\n\n${name.trim()}\n${email.trim()}`;
+		window.location.href =
+			`mailto:${CONTACT_EMAIL}` +
+			`?subject=${encodeURIComponent(subject)}` +
+			`&body=${encodeURIComponent(body)}`;
+		setSent(true);
 	}
+
+	const errorList = Object.values(errors).filter(Boolean);
 
 	return (
 		<section>
@@ -50,46 +72,63 @@ function Contact() {
 				<h2 className="contact-title" id="contact">Contact Me</h2>
 			</div>
 			<div className="formDiv">
-				<form id="contact-form" className="contact-form">
+				<form id="contact-form" className="contact-form" onSubmit={handleSubmit} noValidate>
 					<div>
-						<label htmlFor="Name" className="input-title">Name:</label>
+						<label htmlFor="contact-name" className="input-title">Name:</label>
 						<br></br>
 						<input
+							id="contact-name"
 							type="text"
-							defaultValue={name}
-							onBlur={handleBlank}
-							name="Name"
-                            size="60"
-                            placeholder="Please Enter your Name"
+							name="name"
+							value={name}
+							onChange={handleChange}
+							onBlur={handleBlur}
+							size="60"
+							placeholder="Please Enter your Name"
+							aria-invalid={!!errors.name}
 						/>
 					</div>
 					<div>
-						<label htmlFor="email" className="input-title">Email address:</label>
+						<label htmlFor="contact-email" className="input-title">Email address:</label>
 						<br></br>
 						<input
+							id="contact-email"
 							type="email"
-							defaultValue={email}
 							name="email"
-							onBlur={handleChange}
-                            size="60"
-                            placeholder="Please Enter your Email Address"
+							value={email}
+							onChange={handleChange}
+							onBlur={handleBlur}
+							size="60"
+							placeholder="Please Enter your Email Address"
+							aria-invalid={!!errors.email}
 						/>
 					</div>
 					<div>
-						<label htmlFor="Message" className="message">Message:</label>
+						<label htmlFor="contact-message" className="message">Message:</label>
 						<br></br>
 						<textarea
-							name="Message"
-							defaultValue={message}
-							onBlur={handleBlank}
+							id="contact-message"
+							name="message"
+							value={message}
+							onChange={handleChange}
+							onBlur={handleBlur}
 							rows="7"
-                            placeholder="Message"
+							placeholder="Message"
+							aria-invalid={!!errors.message}
 						/>
 					</div>
-					{errorMessage && (
-						<div>
-							<p className="error-text">{errorMessage}</p>
+					{errorList.length > 0 && (
+						<div role="alert">
+							{errorList.map((err) => (
+								<p key={err} className="error-text">{err}</p>
+							))}
 						</div>
+					)}
+					{sent && (
+						<p role="status">
+							Your email app should open with the message ready to send. If it
+							doesn't, email me at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+						</p>
 					)}
 					<button type="submit" className="submit-btn">Submit</button>
 				</form>
