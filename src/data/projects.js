@@ -29,8 +29,7 @@ export const featuredProjects = [
 		tagline: "Explore a random country in one click",
 		image: geospinImg,
 		imageAlt: "GeoSpin home page with a globe and a 'Start generating countries' button",
-		// Add the live URL here once it's deployed.
-		live: null,
+		live: "https://country-generator-iota.vercel.app/",
 		github: null,
 		codeNote: "Private repository · code available on request",
 		highlights: [
