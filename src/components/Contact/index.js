@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { validateEmail } from "../../utils/helpers";
 
+const MY_EMAIL = "davit.shirkhanyan@gmail.com";
+
 function Contact() {
 	const [formState, setFormState] = useState({
 		name: "",
@@ -44,13 +46,38 @@ function Contact() {
 		}
 	}
 
+	function handleSubmit(e) {
+		e.preventDefault();
+		const form = e.target;
+		const senderName = form.Name.value.trim();
+		const senderEmail = form.email.value.trim();
+		const body = form.Message.value.trim();
+
+		if (!senderName || !body) {
+			setErrorMessage("Name and Message are required.");
+			return;
+		}
+		if (!validateEmail(senderEmail)) {
+			setErrorMessage("Your email is invalid.");
+			return;
+		}
+		setErrorMessage("");
+
+		const subject = `Portfolio message from ${senderName}`;
+		const text = `${body}\n\n${senderName}\n${senderEmail}`;
+		window.location.href = `mailto:${MY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
+	}
+
 	return (
 		<section>
 			<div className="contactDiv">
 				<h2 className="contact-title" id="contact">Contact Me</h2>
+				<p className="contact-email">
+					Email me at <a href={`mailto:${MY_EMAIL}`}>{MY_EMAIL}</a> or use the form below.
+				</p>
 			</div>
 			<div className="formDiv">
-				<form id="contact-form" className="contact-form">
+				<form id="contact-form" className="contact-form" onSubmit={handleSubmit}>
 					<div>
 						<label htmlFor="Name" className="input-title">Name:</label>
 						<br></br>

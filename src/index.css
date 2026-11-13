@@ -318,6 +318,16 @@ input:focus {
   margin-top: 8rem;
 }
 
+.contact-email {
+  color: #fff;
+  margin-left: 20px;
+}
+
+.contact-email a {
+  color: var(--secondary);
+  font-weight: bold;
+}
+
 .error-text {
   font-weight: bold;
   color: #FF0000;
