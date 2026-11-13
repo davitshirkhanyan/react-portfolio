@@ -15,6 +15,12 @@ function Portfolio() {
 			deployed: 'https://jmrendon48.github.io/Personal-Date-Night-Creator/',
 		},
 		{
+			name: 'Shirkon Design',
+			image: 'shirkon-design.png',
+			technologies: ['React', 'Vite', 'Tailwind CSS', 'Vercel'],
+			deployed: 'https://shirkondesign.com',
+		},
+		{
 			name: 'The BasketBlog',
 			image: 'project2.png',
 			technologies: [
@@ -67,12 +73,6 @@ function Portfolio() {
 			technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux', 'GraphQL', 'Apollo Server'],
 			github: 'https://github.com/davitshirkhanyan/redux-store',
 			deployed: 'https://redux-heroku-store.herokuapp.com/',
-		},
-		{
-			name: 'Shirkon Design',
-			image: 'shirkon-design.png',
-			technologies: ['React', 'Vite', 'Tailwind CSS', 'Vercel'],
-			deployed: 'https://shirkondesign.com',
 		},
 	];
 
