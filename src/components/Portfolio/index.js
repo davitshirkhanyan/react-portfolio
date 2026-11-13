@@ -68,6 +68,12 @@ function Portfolio() {
 			github: 'https://github.com/davitshirkhanyan/redux-store',
 			deployed: 'https://redux-heroku-store.herokuapp.com/',
 		},
+		{
+			name: 'Shirkon Design',
+			image: 'shirkon-design.png',
+			technologies: ['React', 'Vite', 'Tailwind CSS', 'Vercel'],
+			deployed: 'https://shirkondesign.com',
+		},
 	];
 
 	return (
@@ -96,6 +102,9 @@ function Portfolio() {
 					</li>
 					<li className="project-list">
 					<Project projects={projects[6]}></Project>  
+					</li>
+					<li className="project-list">
+					<Project projects={projects[7]}></Project>  
 					</li>
 				</ul>
 		</section>

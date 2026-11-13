@@ -43,10 +43,14 @@ function Project(props) {
 					<button><Card.Link href={appLink} target="_blank" className="card-link">
 						{name} App
 					</Card.Link></button>
-					<br></br>
-					<button><Card.Link href={gitLink} target="_blank" className="card-link">
-						{name} Github
-					</Card.Link></button>
+					{gitLink && (
+						<>
+							<br></br>
+							<button><Card.Link href={gitLink} target="_blank" className="card-link">
+								{name} Github
+							</Card.Link></button>
+						</>
+					)}
 				</Card.Body>
 			</div>
 		</Card>
