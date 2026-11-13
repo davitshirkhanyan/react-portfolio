@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.ef141d51.chunk.css",
-    "main.js": "/static/js/main.1919a5de.chunk.js",
-    "main.js.map": "/static/js/main.1919a5de.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2c27b06f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2c27b06f.js.map",
-    "static/js/2.c9fe3fb9.chunk.js": "/static/js/2.c9fe3fb9.chunk.js",
-    "static/js/2.c9fe3fb9.chunk.js.map": "/static/js/2.c9fe3fb9.chunk.js.map",
-    "static/js/3.c8e99c08.chunk.js": "/static/js/3.c8e99c08.chunk.js",
-    "static/js/3.c8e99c08.chunk.js.map": "/static/js/3.c8e99c08.chunk.js.map",
+    "main.js": "/static/js/main.dd5e1432.chunk.js",
+    "main.js.map": "/static/js/main.dd5e1432.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8bb64edf.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8bb64edf.js.map",
+    "static/js/2.3f2c3ff0.chunk.js": "/static/js/2.3f2c3ff0.chunk.js",
+    "static/js/2.3f2c3ff0.chunk.js.map": "/static/js/2.3f2c3ff0.chunk.js.map",
+    "static/js/3.0d810162.chunk.js": "/static/js/3.0d810162.chunk.js",
+    "static/js/3.0d810162.chunk.js.map": "/static/js/3.0d810162.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.ef141d51.chunk.css.map": "/static/css/main.ef141d51.chunk.css.map",
-    "static/js/2.c9fe3fb9.chunk.js.LICENSE.txt": "/static/js/2.c9fe3fb9.chunk.js.LICENSE.txt",
+    "static/js/2.3f2c3ff0.chunk.js.LICENSE.txt": "/static/js/2.3f2c3ff0.chunk.js.LICENSE.txt",
     "static/media/buy-local.PNG": "/static/media/buy-local.b9aa4a22.PNG",
     "static/media/davitshirkhanyan-resume.ed48b222.pdf": "/static/media/davitshirkhanyan-resume.ed48b222.pdf",
     "static/media/davitshirkhanyan.jpg": "/static/media/davitshirkhanyan.64484ae8.jpg",
@@ -21,14 +21,15 @@
     "static/media/port-bg.jpg": "/static/media/port-bg.c7acefd6.jpg",
     "static/media/project1.png": "/static/media/project1.00f9252a.png",
     "static/media/project2.png": "/static/media/project2.d8d38d85.png",
+    "static/media/shirkon-design.png": "/static/media/shirkon-design.84670c08.png",
     "static/media/shop-shop.PNG": "/static/media/shop-shop.922f0444.PNG",
     "static/media/stack-overflow.579cff43.png": "/static/media/stack-overflow.579cff43.png",
     "static/media/weather-dashboard.PNG": "/static/media/weather-dashboard.77cdbad9.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.2c27b06f.js",
-    "static/js/2.c9fe3fb9.chunk.js",
+    "static/js/runtime-main.8bb64edf.js",
+    "static/js/2.3f2c3ff0.chunk.js",
     "static/css/main.ef141d51.chunk.css",
-    "static/js/main.1919a5de.chunk.js"
+    "static/js/main.dd5e1432.chunk.js"
   ]
 }
