@@ -69,7 +69,7 @@ function Portfolio() {
 			deployed: 'https://redux-heroku-store.herokuapp.com/',
 		},
 		{
-			name: 'Shirkondesign.com',
+			name: 'Shirkon Design',
 			image: 'shirkon-design.png',
 			technologies: ['Web Design'],
 			deployed: 'https://shirkondesign.com',
