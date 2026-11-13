@@ -71,7 +71,7 @@ function Portfolio() {
 		{
 			name: 'Shirkon Design',
 			image: 'shirkon-design.png',
-			technologies: ['Web Design'],
+			technologies: ['React', 'Vite', 'Tailwind CSS', 'Vercel'],
 			deployed: 'https://shirkondesign.com',
 		},
 	];
