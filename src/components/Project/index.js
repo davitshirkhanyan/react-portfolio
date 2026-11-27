@@ -1,55 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "react-bootstrap/Card";
 
-
-function Project(props) {
-	// This imports the information for the current project sent down.
-	const currentProject = useState(props)[0].projects;
-	const name = currentProject.name;
-	const image = currentProject.image;
-	const techs = currentProject.technologies;
-	const appLink = currentProject.deployed;
-	const gitLink = currentProject.github;
-
-	// This function parses the information from the array and creates a list.
-	function getTechs(techArray) {
-		let techList = "";
-
-		for (let i = 0; i < techArray.length; i++) {
-			if (i === techArray.length - 1) {
-				techList += techArray[i];
-			} else {
-				techList += techArray[i] + ", ";
-			}
-		}
-
-		return techList;
-	}
+function Project({ project }) {
+	const { name, image, technologies, deployed, github } = project;
 
 	return (
-        
 		<Card id="main-card">
-			<Card.Img id="card-img"
+			<Card.Img
+				id="card-img"
 				variant="top"
 				src={require(`../../assets/images/${image}`).default}
-                alt={image.name}
+				alt={`Screenshot of ${name}`}
+				loading="lazy"
 				className="card-image"
 			/>
 			<div className="cardDiv">
 				<Card.Body>
 					<Card.Title className="card-title">{name}</Card.Title>
 					<Card.Subtitle className="card-subtitle">Techs Used</Card.Subtitle>
-					<Card.Text className="card-techs">{getTechs(techs)}</Card.Text>
-					<button><Card.Link href={appLink} target="_blank" className="card-link">
-						{name} App
-					</Card.Link></button>
-					{gitLink && (
-						<>
-							<br></br>
-							<button><Card.Link href={gitLink} target="_blank" className="card-link">
-								{name} Github
-							</Card.Link></button>
-						</>
+					<Card.Text className="card-techs">{technologies.join(", ")}</Card.Text>
+					{deployed && (
+						<a href={deployed} target="_blank" rel="noreferrer" className="card-btn">
+							{name} App
+						</a>
+					)}
+					{github && (
+						<a href={github} target="_blank" rel="noreferrer" className="card-btn">
+							{name} Github
+						</a>
 					)}
 				</Card.Body>
 			</div>

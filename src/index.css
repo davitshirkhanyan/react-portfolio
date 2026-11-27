@@ -29,7 +29,7 @@ body {
   line-height: 1.5;
   font-size: 18px;
   letter-spacing: .1em;
-  background-image: url("./assets//images/port-bg.jpg");
+  background-image: url("./assets/images/port-bg.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -191,11 +191,24 @@ h6 {
   border-top-right-radius: 20px;
 }
 
-.card-link {
-	font-size: 1rem;
+.card-btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: var(--primary);
   color: var(--secondary);
-  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
+}
+
+.card-btn:hover,
+.card-btn:focus {
+  color: var(--secondary);
+  text-decoration: none;
+  opacity: .8;
 }
 
 .portfolio-image {
@@ -350,6 +363,7 @@ li {
   list-style: none;
 }
 
+nav a,
 nav a:hover {
   text-decoration: none;
 }

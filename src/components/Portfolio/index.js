@@ -4,7 +4,7 @@ function Portfolio() {
 	const projects = [
 		{
 			name: 'Personal Date Night Creator',
-			image: 'project1.png',
+			image: 'date-night.jpg',
 			technologies: [
 				'HTML/CSS',
 				'JavaScript',
@@ -16,13 +16,13 @@ function Portfolio() {
 		},
 		{
 			name: 'Shirkon Design',
-			image: 'shirkon-design.png',
+			image: 'shirkon-design.jpg',
 			technologies: ['React', 'Vite', 'Tailwind CSS', 'Vercel'],
 			deployed: 'https://shirkondesign.com',
 		},
 		{
 			name: 'The BasketBlog',
-			image: 'project2.png',
+			image: 'basketblog.jpg',
 			technologies: [
 				'HTML/CSS',
 				'JavaScript',
@@ -36,14 +36,14 @@ function Portfolio() {
 		},
 		{
 			name: 'Git It Done',
-			image: 'git-it-done.PNG',
+			image: 'git-it-done.jpg',
 			technologies: ['HTML/CSS', 'JavaScript'],
 			github: 'https://github.com/davitshirkhanyan/git-it-done',
 			deployed: 'https://davitshirkhanyan.github.io/git-it-done/',
 		},
 		{
 			name: 'Buy Local',
-			image: 'buy-local.PNG',
+			image: 'buy-local.jpg',
 			technologies: [
                 'React',
 				'GraphQL',
@@ -54,14 +54,14 @@ function Portfolio() {
 		},
 		{
 			name: 'Deep Thoughts',
-			image: 'deep-thoughts.PNG',
+			image: 'deep-thoughts.jpg',
 			technologies: ['MongoDB', 'React', 'Express.js', 'Node.js'],
 			github: 'https://github.com/davitshirkhanyan/deep-thoughts',
 			deployed: 'https://deep-heroku-thoughts.herokuapp.com/',
 		},
 		{
 			name: 'Pizza Hunt',
-			image: 'pizza.PNG',
+			image: 'pizza.jpg',
 			technologies: ['HTML/CSS', 'Javascript', 'Node.js',
             'MongoDB', 'Mongoose', "IndexedDB"],
 			github: 'https://github.com/davitshirkhanyan/pizza-hunt',
@@ -69,7 +69,7 @@ function Portfolio() {
 		},
 		{
 			name: 'Shop-Shop',
-			image: 'shop-shop.PNG',
+			image: 'shop-shop.jpg',
 			technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Redux', 'GraphQL', 'Apollo Server'],
 			github: 'https://github.com/davitshirkhanyan/redux-store',
 			deployed: 'https://redux-heroku-store.herokuapp.com/',
@@ -81,32 +81,13 @@ function Portfolio() {
 			<div className="center">
 				<h1 className="page-header">My Portfolio</h1>
 			</div>
-				<ul className="flex-row portfolio-list"> 
-                    <li className="project-list">
-					<Project projects={projects[0]}></Project>  
-					</li> 
-                    <li className="project-list">
-					<Project projects={projects[1]}></Project>  
-					</li>  
-                    <li className="project-list">
-					<Project projects={projects[2]}></Project>  
+			<ul className="flex-row portfolio-list">
+				{projects.map((project) => (
+					<li className="project-list" key={project.name}>
+						<Project project={project} />
 					</li>
-                    <li className="project-list">
-					<Project projects={projects[3]}></Project>  
-					</li> 
-                    <li className="project-list">
-					<Project projects={projects[4]}></Project>  
-					</li> 
-                    <li className="project-list">
-					<Project projects={projects[5]}></Project>  
-					</li>
-					<li className="project-list">
-					<Project projects={projects[6]}></Project>  
-					</li>
-					<li className="project-list">
-					<Project projects={projects[7]}></Project>  
-					</li>
-				</ul>
+				))}
+			</ul>
 		</section>
 	);
 }

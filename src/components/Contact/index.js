@@ -3,68 +3,43 @@ import { validateEmail } from "../../utils/helpers";
 
 const MY_EMAIL = "davit.shirkhanyan@gmail.com";
 
-function Contact() {
-	const [formState, setFormState] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
+function getError(field, value) {
+	const trimmed = value.trim();
+	if (field === "email") {
+		if (!trimmed) return "Email is required.";
+		if (!validateEmail(trimmed)) return "Your email is invalid.";
+		return "";
+	}
+	if (!trimmed) return `${field === "name" ? "Name" : "Message"} is required.`;
+	return "";
+}
 
-	const [errorMessage, setErrorMessage] = useState("");
+function Contact() {
+	const [formState, setFormState] = useState({ name: "", email: "", message: "" });
+	const [errors, setErrors] = useState({ name: "", email: "", message: "" });
 	const { name, email, message } = formState;
+	const errorMessage = errors.name || errors.email || errors.message;
 
 	function handleChange(e) {
-		if (e.target.name === "email") {
-			const isValid = validateEmail(e.target.value);
-			if (!isValid) {
-				setErrorMessage("Your email is invalid.");
-			} else {
-				if (!e.target.value.length) {
-					setErrorMessage(`${e.target.name} is required.`);
-				} else {
-					setErrorMessage("");
-				}
-			}
-		}
-
-		if (!errorMessage) {
-			setFormState({ ...formState, [e.target.name]: e.target.value });
-		}
+		setFormState({ ...formState, [e.target.name]: e.target.value });
 	}
 
-	function handleBlank(e) {
-		if (e.target.name === "Name" || e.target.name === "Message") {
-			if (!e.target.value.length) {
-				setErrorMessage(`${e.target.name} is required.`);
-			} else {
-				setErrorMessage("");
-			}
-		}
-
-		if (!errorMessage) {
-			setFormState({ ...formState, [e.target.name]: e.target.value });
-		}
+	function handleBlur(e) {
+		setErrors({ ...errors, [e.target.name]: getError(e.target.name, e.target.value) });
 	}
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		const form = e.target;
-		const senderName = form.Name.value.trim();
-		const senderEmail = form.email.value.trim();
-		const body = form.Message.value.trim();
+		const newErrors = {
+			name: getError("name", name),
+			email: getError("email", email),
+			message: getError("message", message),
+		};
+		setErrors(newErrors);
+		if (newErrors.name || newErrors.email || newErrors.message) return;
 
-		if (!senderName || !body) {
-			setErrorMessage("Name and Message are required.");
-			return;
-		}
-		if (!validateEmail(senderEmail)) {
-			setErrorMessage("Your email is invalid.");
-			return;
-		}
-		setErrorMessage("");
-
-		const subject = `Portfolio message from ${senderName}`;
-		const text = `${body}\n\n${senderName}\n${senderEmail}`;
+		const subject = `Portfolio message from ${name.trim()}`;
+		const text = `${message.trim()}\n\n${name.trim()}\n${email.trim()}`;
 		window.location.href = `mailto:${MY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
 	}
 
@@ -77,45 +52,51 @@ function Contact() {
 				</p>
 			</div>
 			<div className="formDiv">
-				<form id="contact-form" className="contact-form" onSubmit={handleSubmit}>
+				<form id="contact-form" className="contact-form" onSubmit={handleSubmit} noValidate>
 					<div>
-						<label htmlFor="Name" className="input-title">Name:</label>
-						<br></br>
+						<label htmlFor="contact-name" className="input-title">Name:</label>
+						<br />
 						<input
+							id="contact-name"
 							type="text"
-							defaultValue={name}
-							onBlur={handleBlank}
-							name="Name"
-                            size="60"
-                            placeholder="Please Enter your Name"
+							name="name"
+							value={name}
+							onChange={handleChange}
+							onBlur={handleBlur}
+							size="60"
+							placeholder="Please Enter your Name"
 						/>
 					</div>
 					<div>
-						<label htmlFor="email" className="input-title">Email address:</label>
-						<br></br>
+						<label htmlFor="contact-email" className="input-title">Email address:</label>
+						<br />
 						<input
+							id="contact-email"
 							type="email"
-							defaultValue={email}
 							name="email"
-							onBlur={handleChange}
-                            size="60"
-                            placeholder="Please Enter your Email Address"
+							value={email}
+							onChange={handleChange}
+							onBlur={handleBlur}
+							size="60"
+							placeholder="Please Enter your Email Address"
 						/>
 					</div>
 					<div>
-						<label htmlFor="Message" className="message">Message:</label>
-						<br></br>
+						<label htmlFor="contact-message" className="message">Message:</label>
+						<br />
 						<textarea
-							name="Message"
-							defaultValue={message}
-							onBlur={handleBlank}
+							id="contact-message"
+							name="message"
+							value={message}
+							onChange={handleChange}
+							onBlur={handleBlur}
 							rows="7"
-                            placeholder="Message"
+							placeholder="Message"
 						/>
 					</div>
 					{errorMessage && (
 						<div>
-							<p className="error-text">{errorMessage}</p>
+							<p className="error-text" role="alert">{errorMessage}</p>
 						</div>
 					)}
 					<button type="submit" className="submit-btn">Submit</button>

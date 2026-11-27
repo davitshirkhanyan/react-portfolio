@@ -1,32 +1,37 @@
-function Nav(props) {
-    const { currentTab, setCurrentTab } = props;
-   
-  
-    return (
-      <header className="flex-row">
-        <h2>
-          <a data-testid="link" className="portfolio-title" href="http://davitshirkhanyan.github.io/react-portfolio">
-            Davit Shirkhanyan
-          </a>
-        </h2>
-        <nav>
-          <ul className="flex-row">
-            <a data-testid="link" href="#about" className={currentTab === "about" ? "mx-2 navActive" : "mx-2 about"}>
-					<span onClick={() => setCurrentTab("about")}>About Me</span>
+const tabs = [
+	{ id: "about", label: "About Me" },
+	{ id: "portfolio", label: "Portfolio" },
+	{ id: "contact", label: "Contact" },
+	{ id: "resume", label: "Resume" },
+];
+
+function Nav({ currentTab, setCurrentTab }) {
+	return (
+		<header className="flex-row">
+			<h2>
+				<a data-testid="link" className="portfolio-title" href="/">
+					Davit Shirkhanyan
 				</a>
-				<a data-testid="link" href="#portfolio" className={currentTab === "portfolio" ? "mx-2 navActive" : "mx-2 portfolio"}>
-					<span onClick={() => setCurrentTab("portfolio")}>Portfolio</span>
-				</a>
-				<a data-testid="link" href="#contact" className={currentTab === "contact" ? "mx-2 navActive" : "mx-2 contact"}>
-					<span onClick={() => setCurrentTab("contact")}>Contact</span>
-				</a>
-				<a data-testid="link" href="#resume" className={currentTab === "resume" ? "mx-2 navActive" : "mx-2 resume"}>
-					<span onClick={() => setCurrentTab("resume")}>Resume</span>
-				</a>
-          </ul>
-        </nav>
-      </header>
-    );
-  }
-  
-  export default Nav;
+			</h2>
+			<nav>
+				<ul className="flex-row">
+					{tabs.map(({ id, label }) => (
+						<li key={id}>
+							<a
+								data-testid="link"
+								href={`#${id}`}
+								className={currentTab === id ? "mx-2 navActive" : `mx-2 ${id}`}
+								aria-current={currentTab === id ? "page" : undefined}
+								onClick={() => setCurrentTab(id)}
+							>
+								{label}
+							</a>
+						</li>
+					))}
+				</ul>
+			</nav>
+		</header>
+	);
+}
+
+export default Nav;

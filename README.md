@@ -4,7 +4,7 @@
 
 ## Description
 
-This portfolio app was created with React.js. It contains an About page, Portfolio page, Contact page, and Resume page. The Portfolio page contains a list of six of my favorite applications. The Resume page contains a link to my resume and a list of my skills. In the Footer you can see the links to my Github, LinkedIn, and Stack Overflow.
+This portfolio app was created with React.js. It contains an About page, Portfolio page, Contact page, and Resume page. The Portfolio page contains a selection of my favorite applications. The Resume page contains a link to my resume and a list of my skills. In the Footer you can see the links to my Github, LinkedIn, and Stack Overflow.
 
 ## Table of Contents
 
